@@ -1,17 +1,19 @@
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
-const router = express.Router();
 
 const prisma = new PrismaClient();
+const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
     const { title, date } = req.body;
+
     const event = await prisma.event.create({
-      data: { title, date: new Date(date) },
+      data: { title, date },
     });
     res.status(201).json(event);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Erro ao criar evento" });
   }
 });
@@ -20,7 +22,7 @@ router.get("/", async (req, res) => {
   try {
     const events = await prisma.event.findMany();
     if (events.length === 0) {
-      return res.status(404).json({ messagem: "Nenhum evento encontrado" });
+      return res.status(200).json([]);
     }
     res.status(200).json(events);
   } catch (error) {
