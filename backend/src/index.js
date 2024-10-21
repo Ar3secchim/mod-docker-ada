@@ -8,7 +8,7 @@ const PORT = 5000;
 // Configuração do CORS
 app.use(
   cors({
-    origin: "http://localhost:5173", // Substitua pela URL do front-end
+    origin: "http://localhost:3000", // Substitua pela URL do front-end
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
