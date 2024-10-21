@@ -26,3 +26,9 @@ docker-compose up
 ```
 
 A aplicação estará disponível em <http://localhost:3000> para o frontend e <http://localhost:5000> para o backend.
+
+### Links das imagens no Docker Hub
+
+frontend - <https://hub.docker.com/repository/docker/ar3secchim/frontend-events-app/general>
+backend - <https://hub.docker.com/repository/docker/ar3secchim/backend-events-app/general>
+database- <https://hub.docker.com/repository/docker/ar3secchim/db-events-app/general>
